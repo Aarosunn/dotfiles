@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export PATH="$HOME/.local/bin:$PATH"
 STATE="$HOME/.local/state/shell-switch"
 mkdir -p "$(dirname "$STATE")"
 target="${1:-$(cat "$STATE" 2>/dev/null || echo classic)}"
@@ -8,6 +9,8 @@ pkill -x mako
 pkill -f "caelestia shell"
 pkill -x quickshell
 pkill -x qs
+pkill -f vitreus-keep
+pkill -x pleamar
 sleep 0.5
 
 run() { setsid "$@" >/dev/null 2>&1 </dev/null & }
@@ -24,6 +27,10 @@ classic)
   ;;
 caelestia)
   run caelestia shell -d
+  ;;
+vitreus)
+  pgrep -x awww-daemon >/dev/null || run awww-daemon
+  run vitreus-keep "$HOME/.config/pleamar/shells/vitreus/vitreus.plm" "$HOME/.local/share/pleamar/vitreus/vitreus.log"
   ;;
 *)
   echo "unknown shell: $target" >&2
