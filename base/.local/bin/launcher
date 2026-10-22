@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+case "$(cat ~/.local/state/shell-switch 2>/dev/null)" in
+  caelestia) caelestia shell drawers toggle launcher ;;
+  *) rofi -show drun ;;
+esac
