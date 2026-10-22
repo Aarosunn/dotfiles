@@ -1,0 +1,60 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+$os$directory$git_branch$git_status$fill$cmd_duration$time
+$character"""
+
+[fill]
+symbol = " "
+
+[os]
+disabled = false
+format	 = "[$symbol](bold #89b4fa) "
+
+[os.symbols]
+CachyOS = "󰣇"
+
+[directory]
+format            = "[$path](bold #cba6f7) "
+truncation_length = 3
+truncate_to_repo  = true
+
+[directory.substitutions]
+"~/Dev"       = "󰲋 Dev"
+"~/Documents" = "󰲂 Documents"
+"~/Downloads" = "󰉍 Downloads"
+"~/Desktop"   = " Desktop"
+"~/Media"     = "󱁛 Media"
+"~"           = "󰋜 ~"
+"~/.config"   = "Config"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch](bold #89b4fa) "
+
+[git_status]
+format     = "($modified$untracked$staged$ahead_behind)"
+modified   = "[●](bold #f9e2af)"
+untracked  = "[?](bold #a6adc8)"
+staged     = "[+](bold #a6e3a1)"
+ahead      = "[⇡](bold #89b4fa)"
+behind     = "[⇣](bold #89b4fa)"
+diverged   = "[⇡⇣](bold #f38ba8)"
+deleted    = "[✘](bold #f38ba8)"
+conflicted = "[⚡](bold #f38ba8)"
+
+[cmd_duration]
+min_time = 2000
+format   = "[$duration](bold #f9e2af) "
+
+[time]
+disabled      = false
+format        = "[$time](bold #a6adc8)"
+time_format   = "%H:%M"
+
+[character]
+success_symbol = "[❯](bold #a6e3a1)"
+error_symbol   = "[❯](bold #f38ba8)"
+vimcmd_symbol  = "[❮](bold #89b4fa)"

@@ -1,0 +1,37 @@
+font=JetBrainsMono Nerd Font 9
+background-color=#1e1e2eE6
+text-color=#cdd6f4
+border-color=#cba6f7
+border-size=1
+border-radius=8
+width=260
+height=60
+padding=8
+margin=10
+anchor=bottom-right
+layer=overlay
+default-timeout=7000
+ignore-timeout=1
+max-visible=3
+sort=-time
+format=<span color="#cba6f7" font_weight="bold">%a</span>\n<b>%s</b>\n<span color="#a6adc8">%b</span>
+
+[urgency=low]
+background-color=#181825E6
+border-color=#45475a
+border-size=1
+format=<span color="#6c7086" font_weight="bold">%a</span>\n<b>%s</b>\n<span color="#6c7086">%b</span>
+default-timeout=4000
+
+[urgency=normal]
+background-color=#1e1e2eE6
+border-color=#cba6f7
+border-size=1
+format=<span color="#cba6f7" font_weight="bold">%a</span>\n<b>%s</b>\n<span color="#a6adc8">%b</span>
+
+[urgency=high]
+background-color=#181825E6
+border-color=#f38ba8
+border-size=2
+format=<span color="#f38ba8" font_weight="bold">%a</span>\n<b>%s</b>\n<span color="#cdd6f4">%b</span>
+default-timeout=0

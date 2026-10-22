@@ -1,0 +1,22 @@
+* {
+    bg0:     #1E1E2Eff;
+    bg1:     #181825ff;
+    bg2:     #313244ff;
+    bg3:     #45475Aff;
+    bg4:     #585B70ff;
+    fg0:     #CDD6F4ff;
+    fg1:     #BAC2DEff;
+    fg2:     #A6ADC8ff;
+    red:     #F38BA8ff;
+    pink:    #F5C2E7ff;
+    mauve:   #CBA6F7ff;
+    peach:   #FAB387ff;
+    yellow:  #F9E2AFff;
+    green:   #A6E3A1ff;
+    teal:    #94E2D5ff;
+    blue:    #89B4FAff;
+    sky:     #89DCEBff;
+    lavender:#B4BEFEff;
+    background-color: transparent;
+    text-color:       @fg0;
+}
