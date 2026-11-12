@@ -80,3 +80,9 @@ source ~/.config/zsh/plugins/zsh-transient-prompt/transient-prompt.plugin.zsh
 
 # bun completions
 [ -s "/home/aaron/.bun/_bun" ] && source "/home/aaron/.bun/_bun"
+
+# git push: ssh stdin is a pipe + DISPLAY set -> ssh tries missing /usr/lib/ssh/ssh-askpass; force tty prompt
+export SSH_ASKPASS_REQUIRE=never
+
+alias claude2="CLAUDE_CONFIG_DIR=$HOME/.claude-2 claude"
+export PATH=/opt/cuda/bin:$PATH
