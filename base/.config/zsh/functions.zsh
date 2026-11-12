@@ -18,7 +18,7 @@ zsh_stats() { history | awk '{print $2}' | sort | uniq -c | sort -rn | head -20 
 path() { echo $PATH | tr ':' '\n' }
 
 leet() {
-  ~/bin/leetcode-cookie
+  leetcode-cookie
   cd /home/aaron/Dev/Personal/Trellis || return
   exec claude --resume 99bd4feb-5d69-412b-b9cc-b7e4f8d73af6 --dangerously-skip-permissions "resume the latest question"
 }
