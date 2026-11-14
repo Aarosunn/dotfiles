@@ -23,3 +23,6 @@ leet() {
   exec claude --resume 99bd4feb-5d69-412b-b9cc-b7e4f8d73af6 --dangerously-skip-permissions "resume the latest question"
 }
 
+gac() { git add -A && git commit -m "$*"; }
+gacp() { git add -A && git commit -m "$*" && git push; }
+
