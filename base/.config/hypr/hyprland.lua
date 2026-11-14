@@ -283,8 +283,8 @@ hl.bind(mainMod .. " + N", hl.dsp.layout("togglesplit")) -- dwindle only
 
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 
-hl.bind(mainMod .. " + O", hl.dsp.window.tag({ tag = "transparent" }))
-hl.bind(mainMod .. " + SHIFT + O", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-opacity.sh"))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-opacity.sh window"))
+hl.bind(mainMod .. " + SHIFT + O", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-opacity.sh all"))
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
@@ -373,7 +373,9 @@ hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | clip
 
 -- Example window rules that are useful
 
-hl.window_rule({ match = { tag = "transparent" }, opacity = "0.85 override 0.85 override" })
+hl.window_rule({ match = { tag = "op95" }, opacity = "0.95 override 0.95 override" })
+hl.window_rule({ match = { tag = "op90" }, opacity = "0.9 override 0.9 override" })
+hl.window_rule({ match = { tag = "op85" }, opacity = "0.85 override 0.85 override" })
 
 ---@diagnostic disable-next-line: unused-local
 local suppressMaximizeRule = hl.window_rule({
