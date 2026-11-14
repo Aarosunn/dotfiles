@@ -265,8 +265,6 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser .. " --blank-window"))
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("~/.config/hypr/scripts/link-menu.sh"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("networkmanager_dmenu"))
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper-menu.sh"))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(browser .. " https://youtube.com"))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(browser .. " https://claude.ai"))
 hl.bind(
@@ -274,10 +272,14 @@ hl.bind(
 	hl.dsp.exec_cmd(browser .. " https://drive.google.com/drive/folders/1lllVAcmGepnFMDdb4zFhNjptYEuULQ8j")
 )
 
+-- Leaving: lock, sleep, exit (more modifiers = bigger step)
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("caelestia shell lock lock"))
+hl.bind(mainMod .. " + CTRL + Escape", hl.dsp.exec_cmd("caelestia shell lock lock && sleep 1 && systemctl suspend"))
 hl.bind(
-	mainMod .. " + M",
+	mainMod .. " + SHIFT + Escape",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
+
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + N", hl.dsp.layout("togglesplit")) -- dwindle only
 
@@ -296,6 +298,12 @@ hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+
+-- Resize windows with mainMod + CTRL + H/J/K/L (hold to repeat)
+hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.resize({ x = -40, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.resize({ x = 40, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.resize({ x = 0, y = -40, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.resize({ x = 0, y = 40, relative = true }), { repeating = true })
 
 -- Fullscreen
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
