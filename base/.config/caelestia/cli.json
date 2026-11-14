@@ -1,0 +1,11 @@
+{
+  "theme": {
+    "enableTerm": false,
+    "enableGtk": false,
+    "enableQt": false,
+    "enableBtop": false,
+    "enableHtop": false,
+    "enableNvtop": false,
+    "enableChromium": false
+  }
+}
