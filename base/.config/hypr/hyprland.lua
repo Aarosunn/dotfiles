@@ -280,8 +280,8 @@ hl.bind(
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + N", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + N", hl.dsp.layout("togglesplit"))
 
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 
@@ -370,8 +370,8 @@ hl.bind(
 hl.bind("SUPER + Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot-named.sh"))
 
 -- Clipboard History
-hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
-
+hl.bind("SUPER + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
+hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("~/.config/hypr/scripts/pin-menu.sh"))
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------

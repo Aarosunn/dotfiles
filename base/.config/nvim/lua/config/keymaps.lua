@@ -4,3 +4,9 @@
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Deleting with x shouldn't touch the clipboard
+vim.keymap.set({ "n", "x" }, "x", '"_x')
+-- Pasting over a selection keeps what you copied
+vim.keymap.set("x", "p", "P")
+vim.keymap.set({ "n", "x" }, "c", '"_c')
