@@ -369,6 +369,7 @@ hl.bind(
 )
 hl.bind("SUPER + Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot-named.sh"))
 
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a"))
 -- Clipboard History
 hl.bind("SUPER + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("~/.config/hypr/scripts/pin-menu.sh"))
